@@ -47,23 +47,10 @@ feature          ●─────────────● (Your PR targets 
    git checkout -b feature/your-feature-name
    ```
 
-3. **Install Dependencies:**
-   ```bash
-   npm install
-   ```
-
-4. **Setup Environment Variables:**
+3. **Configure Environment:**
    ```bash
    cp .env.example .env
    ```
-   Open `.env` and fill in your Spotify Client ID and Client Secret.
-
-5. **Start Development Server:**
-   ```bash
-   npm run dev
-   ```
-   - Broadcaster Dashboard: `http://localhost:3000`
-   - OBS Browser Source Overlay: `http://localhost:3000/overlay`
 
 ---
 
