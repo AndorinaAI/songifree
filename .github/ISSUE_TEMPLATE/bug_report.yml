@@ -1,0 +1,83 @@
+name: "🐛 Bug Report"
+description: "File a bug report to help us improve Songifree"
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report an issue! Please provide as much detail as possible so we can reproduce and fix the bug quickly.
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Affected Live Platform(s)"
+      description: "Which streaming platform chat or component did you experience this issue on?"
+      multiple: true
+      options:
+        - "Spotify Connect / Playback API"
+        - "Twitch Chat (IRC / EventSub)"
+        - "Kick Live Chat"
+        - "TikTok Live"
+        - "OBS Browser Source Overlay"
+        - "Broadcaster Web Dashboard"
+        - "Queue & Moderation Engine"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: "Songifree Version"
+      description: "What version or commit of Songifree are you running?"
+      placeholder: "e.g., v0.1.0 or commit hash (or dev branch)"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: "Environment Details"
+      description: "Operating System and Node.js version"
+      placeholder: "e.g., Windows 11 / Ubuntu 22.04 / macOS 14, Node v20.10.0, OBS v30.1"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "Describe the Bug"
+      description: "A clear and concise description of what the bug is."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Steps to Reproduce"
+      description: "Exact steps to reproduce the behavior."
+      placeholder: |
+        1. Start Songifree with Spotify connected
+        2. In Kick/Twitch/TikTok chat, send command '!sr Rick Astley Never Gonna Give You Up'
+        3. Observe error in console / overlay
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected Behavior"
+      description: "What did you expect to happen?"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Logs & Console Output"
+      description: "Paste relevant terminal logs, browser developer tools console logs, or crash traces (please redact private tokens/client secrets!)."
+      render: shell
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Pre-flight Checklist"
+      options:
+        - label: "I have confirmed that my Spotify credentials and redirect URI (`http://localhost:8888/callback`) are properly configured."
+          required: true
+        - label: "I have checked that no existing issue or discussion already addresses this problem."
+          required: true
+        - label: "I have removed all private API tokens, passwords, and secrets from any logs provided above."
+          required: true

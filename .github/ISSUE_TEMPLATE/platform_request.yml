@@ -1,0 +1,42 @@
+name: "🔌 New Platform / Provider Integration"
+description: "Request integration for an additional live streaming or music platform"
+title: "[Integration]: Support for "
+labels: ["integration", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Songifree currently connects **Spotify** with **Twitch**, **Kick**, and **TikTok Live**.
+        Want to see another live chat or music streaming service supported? Let us know!
+  - type: dropdown
+    id: integration_type
+    attributes:
+      label: "Integration Type"
+      options:
+        - "Live Streaming Platform Chat (e.g., YouTube Live, Trovo, Discord, Facebook)"
+        - "Music Streaming Service (e.g., YouTube Music, Apple Music, SoundCloud, Tidal)"
+        - "Broadcast Tool / Hardware (e.g., Elgato Stream Deck plugin, Lumia Stream, OBS WebSocket)"
+    validations:
+      required: true
+  - type: input
+    id: platform_name
+    attributes:
+      label: "Platform / Service Name"
+      placeholder: "e.g., YouTube Live Chat"
+    validations:
+      required: true
+  - type: textarea
+    id: api_docs
+    attributes:
+      label: "Official API / Protocol Documentation"
+      description: "Links to documentation, official SDKs, or protocols for interacting with this service."
+      placeholder: "e.g., https://developers.google.com/youtube/v3/live/docs/liveChatMessages"
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: "Use Case & Community Value"
+      description: "Why would streamers and viewers benefit from this integration?"
+    validations:
+      required: true
